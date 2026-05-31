@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Place at: app/src/main/res/values/strings.xml
+
+  REPLACE:
+    • app_name — the human-readable plugin name shown in ATAK's toolbar
+    • app_desc — short description, shown in plugin manager
+
+  Both are referenced from AndroidManifest.xml and from your IPlugin class.
+-->
+<resources>
+    <string name="app_name">My Plugin</string>
+    <string name="app_desc">Short description of what the plugin does.</string>
+</resources>
