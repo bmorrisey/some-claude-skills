@@ -1,0 +1,25 @@
+// REPLACE: rootProject.name with your plugin's name (kebab-case, e.g. 'my-plugin').
+// The name flows into:
+//   • The APK filename (archivesBaseName in app/build.gradle)
+//   • The ProGuard repackage rule (-repackageclasses atakplugin.<name>)
+//   • The TPC source-ZIP root folder name
+// Pick a stable, public-facing name BEFORE first build.
+
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.PREFER_PROJECT)
+    repositories {
+        google()
+        mavenCentral()
+        maven { url "https://jitpack.io" }
+    }
+}
+
+rootProject.name = 'MYPLUGIN'   // ← REPLACE
+include ':app'

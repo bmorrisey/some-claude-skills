@@ -1,0 +1,19 @@
+# Save as .gitattributes (with the leading dot) at the REPO ROOT.
+#
+# Tracks the ATAK SDK jars in Git LFS so they don't bloat the regular Git
+# history. Required when committing atak-sdks/ in-repo (the recommended layout
+# for CI/CD — see references/01-from-scratch.md §1).
+#
+# Setup sequence:
+#   git lfs install
+#   <save this file as .gitattributes at repo root>
+#   git add .gitattributes
+#   git add atak-sdks/
+#   git commit -m "Add ATAK SDK jars via LFS"
+#   git push
+#
+# Verify LFS picked them up:
+#   git lfs ls-files
+# Should list every *.jar under atak-sdks/.
+
+atak-sdks/**/*.jar filter=lfs diff=lfs merge=lfs -text

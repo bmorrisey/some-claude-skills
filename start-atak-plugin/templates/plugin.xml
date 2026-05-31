@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  REPLACE the `impl` attribute with your fully-qualified plugin class name.
+  Example: com.atakmap.android.myplugin.plugin.MyPlugin
+
+  Place this file at:  app/src/main/assets/plugin.xml
+
+  type=gov.tak.api.plugin.IPlugin is the SDK 5.5+ "new style" plugin entry point.
+  singleton="true" means ATAK creates only one instance for the app lifetime.
+
+  Bump versionCode in AndroidManifest.xml whenever this file changes.
+-->
+<plugin>
+
+    <extension
+        type="gov.tak.api.plugin.IPlugin"
+        impl="com.atakmap.android.MYPLUGIN.plugin.MYPLUGINClass"
+        singleton="true" />
+
+</plugin>

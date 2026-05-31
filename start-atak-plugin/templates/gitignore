@@ -1,0 +1,42 @@
+# Save as .gitignore (with the leading dot) at the REPO ROOT.
+#
+# Note: This file deliberately scopes keystore ignores to app/** so that
+# atak-sdks/android_keystore (if present) is NOT ignored. See §1 of
+# references/01-from-scratch.md.
+
+# Gradle
+.gradle/
+build/
+*/build/
+
+# IntelliJ / Android Studio
+.idea/
+*.iml
+.idea_modules/
+captures/
+
+# Local config (per-developer credentials)
+local.properties
+
+# Build outputs
+*.apk
+*.aab
+*.aar
+*.dex
+
+# Signing material (scoped to app/, NOT atak-sdks/)
+app/**/*.keystore
+app/**/*.jks
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Native build
+.cxx/
+
+# takdev workspace
+.takdev/
+
+# TPC staging
+tpc-staging/

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Canonical AndroidManifest.xml for an ATAK plugin.
+
+  Notes:
+    • The activity declaration below is REQUIRED — without it ATAK 4.6.0.2+
+      cannot discover the plugin. It is fictitious; ATAK never launches it.
+    • atakApiVersion is supplied by the manifestPlaceholders block in
+      app/build.gradle; do not hard-code it here.
+    • Add permissions BELOW (e.g. INTERNET, ACCESS_FINE_LOCATION) only if
+      your plugin code actually needs them — minimum-permissions matters.
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="GoogleAppIndexingWarning">
+
+    <application
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:description="@string/app_desc"
+        android:theme="@style/AppTheme">
+        <meta-data android:name="plugin-api" android:value="${atakApiVersion}"/>
+        <meta-data android:name="app_desc"   android:value="@string/app_desc"/>
+
+        <!-- REQUIRED for plugin discovery on ATAK 4.6.0.2+. Do not remove. -->
+        <activity android:name="com.atakmap.app.component"
+            android:exported="true"
+            tools:ignore="MissingClass">
+            <intent-filter android:label="@string/app_name">
+                <action android:name="com.atakmap.app.component" />
+            </intent-filter>
+        </activity>
+
+    </application>
+
+</manifest>
